@@ -10,9 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     var number = 0
-    var a = 0
-    var b = 0
-    var c = 0
+    var a = 0.0
+    var b = 0.0
+    var c = 0.0
+    var p = 0
     @IBOutlet weak var print1: UITextField!
     @IBOutlet weak var print2: UITextField!
     @IBOutlet weak var print: UITextField!
@@ -55,7 +56,7 @@ class ViewController: UIViewController {
         
     }
     @IBAction func result(_ sender: Any) {
-        b = Int(print.text!)!
+        b = Double(print.text!)!
         print2.text = String(b)
         print.text = "0"
         if number == 1{
@@ -67,17 +68,24 @@ class ViewController: UIViewController {
         }else if number == 4{
             c = a / b
         }
-        print.text = String(c)
+        print.text = String(format:"%.2lf" , c)
+    }
+    @IBAction func point(_ sender: Any) {
+        if p == 0{
+            print.text = print.text! + "."
+            p = 1
+        }
     }
     @IBAction func add(_ sender: Any) {
         if print.text == ""{
             print.text = "0"
             number = 1
         }else{
-            a = Int(print.text!)!
+            a = Double(print.text!)!
             print1.text = String(a)
             print.text = ""
             number = 1
+            p = 0
         }
     }
     @IBAction func subtraction(_ sender: Any) {
@@ -85,10 +93,11 @@ class ViewController: UIViewController {
             print.text = "0"
             number = 2
         }else{
-            a = Int(print.text!)!
+            a = Double(print.text!)!
             print1.text = String(a)
             print.text = ""
             number = 2
+            p = 0
         }
     }
     @IBAction func time(_ sender: Any) {
@@ -96,10 +105,11 @@ class ViewController: UIViewController {
             print.text = "0"
             number = 3
         }else{
-            a = Int(print.text!)!
+            a = Double(print.text!)!
             print1.text = String(a)
             print.text = ""
             number = 3
+            p = 0
         }
     }
     
@@ -108,16 +118,18 @@ class ViewController: UIViewController {
             print.text = "0"
             number = 4
         }else{
-            a = Int(print.text!)!
+            a = Double(print.text!)!
             print1.text = String(a)
             print.text = ""
             number = 4
+            p = 0
         }
     }
     @IBAction func Dele(_ sender: Any) {
         print.text = ""
         print1.text = ""
         print2.text = ""
+        p = 0
     }
     override func viewDidLoad() {
         super.viewDidLoad()
