@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var print1: UITextField!
     @IBOutlet weak var print2: UITextField!
     @IBOutlet weak var print: UITextField!
+
     @IBAction func one(_ sender: Any) {
         print.text = print.text! + "1"
     }
@@ -52,7 +53,11 @@ class ViewController: UIViewController {
         
     }
     @IBAction func zero(_ sender: Any) {
-        print.text = print.text! + "0"
+        if print.text == ""{
+            print.text = "0"
+        }else{
+            print.text = print.text! + "0"
+        }
         
     }
     @IBAction func result(_ sender: Any) {
