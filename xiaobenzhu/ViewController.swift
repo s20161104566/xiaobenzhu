@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         if p == 0{
             print.text = print.text! + "."
             p = 1
-        }
+        } 
     }
     @IBAction func add(_ sender: Any) {
         if print.text == ""{
@@ -128,6 +128,14 @@ class ViewController: UIViewController {
             print.text = ""
             number = 4
             p = 0
+        }
+    }
+    @IBAction func sign(_ sender: Any) {
+        if print.text?.first == "-"{
+            print.text?.removeFirst()
+        }
+        else{
+            print.text = "-" + print.text!
         }
     }
     @IBAction func Dele(_ sender: Any) {
