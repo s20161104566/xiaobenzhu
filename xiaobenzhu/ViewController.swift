@@ -144,6 +144,11 @@ class ViewController: UIViewController {
         print2.text = ""
         p = 0
     }
+    @IBAction func C(_ sender: Any) {
+        if print.text != ""{
+            print.text?.removeLast()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
