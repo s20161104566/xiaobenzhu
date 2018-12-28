@@ -14,8 +14,7 @@ class ViewController: UIViewController {
     var b = 0.0
     var c = 0.0
     var p = 0
-    var n = ""
-    var m = ""
+
     @IBOutlet weak var print1: UITextField!
     @IBOutlet weak var print2: UITextField!
 
@@ -141,7 +140,7 @@ class ViewController: UIViewController {
     @IBAction func result(_ sender: Any) {
         b = Double(print2.text!)!
         print1.text = print1.text! + String(b)
-        print2.text = "0"
+       
         if number == 1
         {
              c = a + b
@@ -165,7 +164,7 @@ class ViewController: UIViewController {
     }
     @IBAction func point(_ sender: Any)
     {
-        if re == 0{
+        if p == 0{
             print2.text = print2.text! + "."
             p = 1
         }
@@ -185,6 +184,7 @@ class ViewController: UIViewController {
             print2.text = ""
             number = 1
             re = 0
+            p = 0
         }
     }
     @IBAction func subtraction(_ sender: Any) {
@@ -201,6 +201,7 @@ class ViewController: UIViewController {
             print2.text = ""
             number = 2
             re = 0
+            p = 0
         }
     }
     @IBAction func time(_ sender: Any) {
@@ -217,6 +218,7 @@ class ViewController: UIViewController {
             print2.text = ""
             number = 3
             re = 0
+            p = 0
         }
     }
     
@@ -234,9 +236,11 @@ class ViewController: UIViewController {
             print2.text = ""
             number = 4
             re = 0
+            p = 0
         }
     }
-    @IBAction func sign(_ sender: Any) {
+    @IBAction func sign(_ sender: Any)//判断是否有负号
+    {
         if print2.text?.first == "-"
         {
             print2.text?.removeFirst()
@@ -250,14 +254,18 @@ class ViewController: UIViewController {
     @IBAction func Dele(_ sender: Any)
     {
        // print.text = ""
-        n = ""
         print1.text = ""
         print2.text = ""
         re = 0
+        p = 0
     }
     @IBAction func C(_ sender: Any)
     {
-        if print2.text != ""
+        if print2.text?.last == "."{
+            print2.text?.removeLast()
+            p = 0//避免小数点删除后还能重复点很多小数点
+        }
+        else if print2.text != ""
         {
             print2.text?.removeLast()
         }
