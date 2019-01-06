@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         if re == 1{
             
             print2.text = "1"
+            re=0
         }
         else{
             
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
         if re == 1{
             
             print2.text = "2"
+            re=0
         }
         else{
             
@@ -46,6 +48,7 @@ class ViewController: UIViewController {
         if re == 1{
             
             print2.text = "3"
+            re=0
         }
         else{
             
@@ -58,6 +61,7 @@ class ViewController: UIViewController {
         if re == 1{
             
             print2.text = "4"
+            re=0
         }
         else{
             
@@ -70,6 +74,7 @@ class ViewController: UIViewController {
         if re == 1{
             
             print2.text = "5"
+            re=0
         }
         else{
             
@@ -82,6 +87,7 @@ class ViewController: UIViewController {
         if re == 1{
             
             print2.text = "6"
+            re=0
         }
         else{
             
@@ -94,6 +100,7 @@ class ViewController: UIViewController {
         if re == 1{
             
             print2.text = "7"
+            re=0
         }
         else{
             
@@ -106,6 +113,7 @@ class ViewController: UIViewController {
         if re == 1{
             
             print2.text = "8"
+            re=0
         }
         else{
             
@@ -118,6 +126,7 @@ class ViewController: UIViewController {
         if re == 1{
             
             print2.text = "9"
+            re=0
         }
         else{
             
@@ -130,6 +139,7 @@ class ViewController: UIViewController {
         if re == 1{
             
             print2.text = "0"
+            re=0
         }
         else{
             
@@ -138,9 +148,9 @@ class ViewController: UIViewController {
         
     }
     @IBAction func result(_ sender: Any) {
+        
         b = Double(print2.text!)!
         print1.text = print1.text! + String(b)
-       
         if number == 1
         {
              c = a + b
@@ -161,6 +171,7 @@ class ViewController: UIViewController {
         print1.text = print1.text! + "="
         
         print2.text = String(format:"%.2lf" , c)
+        re=1
     }
     @IBAction func point(_ sender: Any)
     {
